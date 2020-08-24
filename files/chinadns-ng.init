@@ -162,3 +162,7 @@ stop_service() {
 	config_load chinadns-ng
 	config_foreach destroy_chnroute_ipset chinadns-ng
 }
+
+service_triggers() {
+        procd_add_reload_trigger "chinadns-ng"
+}
